@@ -10,15 +10,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-      - run: docker build -t niko-lis/react-test -f ./client/Dockerfile.dev ./client
-      - run: docker run -e CI=true niko-lis/react-test npm test
+      - run: docker build -t zevlisnick401/react-test -f ./client/Dockerfile.dev ./client
+      - run: docker run -e CI=true zevlisnick401/react-test npm test
 
-      - run: docker build -t niko-lis/multi-client ./client
-      - run: docker build -t niko-lis/multi-nginx ./nginx
-      - run: docker build -t niko-lis/multi-server ./server
-      - run: docker build -t niko-lis/multi-worker ./worker
+      - run: docker build -t zevlisnick401/multi-client ./client
+      - run: docker build -t zevlisnick401/multi-nginx ./nginx
+      - run: docker build -t zevlisnick401/multi-server ./server
+      - run: docker build -t zevlisnick401/multi-worker ./worker
 
-      - run: docker push niko-lis/multi-client
-      - run: docker push niko-lis/multi-nginx
-      - run: docker push niko-lis/multi-server
-      - run: docker push niko-lis/multi-worker
+      - run: docker push zevlisnick401/multi-client
+      - run: docker push zevlisnick401/multi-nginx
+      - run: docker push zevlisnick401/multi-server
+      - run: docker push zevlisnick401/multi-worker
